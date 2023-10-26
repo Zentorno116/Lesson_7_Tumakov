@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Упражнение 8.1 Тумаков");
-        Account account1 = new Account("1234567890", 10000, AccountType.DEPOSIT);
-        Account account2 = new Account("9876543210", 0, AccountType.CURRENT);
+        Account account1 = new Account("88005553535", 1234, AccountType.DEPOSIT);
+        Account account2 = new Account("53535550088", 0, AccountType.CURRENT);
 
         account1.Transfer(account2, 5000);
 
