@@ -1,111 +1,48 @@
-﻿using System;
-
-class Program
+﻿namespace Zamilov_T_R_Hometask_21._10._23
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Упражнение 8.1 Тумаков");
-        Account account1 = new Account("88005553535", 1234, AccountType.DEPOSIT);
-        Account account2 = new Account("53535550088", 0, AccountType.CURRENT);
-
-        account1.Transfer(account2, 5000);
-
-        Console.WriteLine(account1);
-        Console.WriteLine(account2);
-        
-        Console.ReadKey();
-        Console.Clear();
-
-        Console.WriteLine("Упражнение 8.2 Тумаков");
-        string str = "Chuvak, alcohol is suck.";
-        string reversedStr = ReverseString(str);
-
-        Console.WriteLine(str);
-        Console.WriteLine(reversedStr);
-    }
-
-    //Упражнение 8.2. Метод - Переворот букв.
-    public static string ReverseString(string str)
-    {
-        char[] chars = str.ToCharArray();
-
-        for (int i = 0, j = chars.Length - 1; i < j; i++, j--)
+        static void Main(string[] args)
         {
-            char temp = chars[i];
-            chars[i] = chars[j];
-            chars[j] = temp;
+            Console.WriteLine("Упражнение 8.1 Тумаков");
+            Account account1 = new Account("88005553535", 1234, AccountType.DEPOSIT);
+            Account account2 = new Account("53535550088", 0, AccountType.CURRENT);
+
+            account1.Transfer(account2, 5000);
+
+            Console.WriteLine(account1);
+            Console.WriteLine(account2);
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Упражнение 8.2 Тумаков");
+            string str = "Chuvak, alcohol is suck.";
+            string reversedStr = ReverseString(str);
+
+            Console.WriteLine(str);
+            Console.WriteLine(reversedStr);
         }
 
-        return new string(chars);
-    }
-}
-
-class Account
-{
-    private string number;
-    private double balance;
-    private AccountType type;
-
-
-    public Account(string number, double balance, AccountType type)
-    {
-        this.number = number;
-        this.balance = balance;
-        this.type = type;
-    }
-
-
-    public void SetNumber(string number)
-    {
-        this.number = number;
-    }
-
-    public string GetNumber()
-    {
-        return this.number;
-    }
-
-    public void SetBalance(double balance)
-    {
-        this.balance = balance;
-    }
-
-    public double GetBalance()
-    {
-        return this.balance;
-    }
-
-    public void SetType(AccountType type)
-    {
-        this.type = type;
-    }
-
-    public AccountType GetType()
-    {
-        return this.type;
-    }
-
-
-    public override string ToString()
-    {
-        return $"Номер счета: {this.number}\nБаланс: {this.balance}\nТип счета: {this.type}";
-    }
-
-
-    public void Transfer(Account toAccount, double amount)
-    {
-        if (this.balance >= amount)
+        //Упражнение 8.2. Метод - Переворот букв.
+        public static string ReverseString(string str)
         {
-            this.balance -= amount;
+            char[] chars = str.ToCharArray();
 
-            toAccount.balance += amount;
+            for (int i = 0, j = chars.Length - 1; i < j; i++, j--)
+            {
+                char temp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = temp;
+            }
+
+            return new string(chars);
         }
     }
-}
 
-enum AccountType
-{
-    DEPOSIT,
-    CURRENT
+    enum AccountType
+    {
+        DEPOSIT,
+        CURRENT
+    }
 }
-

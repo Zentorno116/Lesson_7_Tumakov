@@ -20,8 +20,6 @@ namespace Automation_21._10._23_Z_T_R
             Employee _Jenya = new Employee("Женя");
             Employee _Sergay = new Employee("Серега");
             Employee _Laisan = new Employee("Ляйсан");
-            Employee _Marat = new Employee("Марат");
-            Employee _Dina = new Employee("Дина");
             Employee _Ildar = new Employee("Ильдар");
             Employee _Anton = new Employee("Антон");
 
@@ -35,14 +33,13 @@ namespace Automation_21._10._23_Z_T_R
             _Ilshat.Add(_Ivanich);
             _Ivanich.Add(_Iliya, _Vitya, _Jenya);
             _Sergay.Add(_Laisan);
-            _Laisan.Add(_Marat, _Dina, _Ildar, _Anton);
+
 
             TaskAssignment.AssignTask(_Semon, _Rashid, "Автоматизировать бухгалтерию");
             TaskAssignment.AssignTask(_Semon, _OIlkham, "Автоматизировать бухгалтерию");
             TaskAssignment.AssignTask(_Rashid, _Lukas, "Обновить серверы");
             TaskAssignment.AssignTask(_Lukas, _OIlkham, "Установить ПО");
-            TaskAssignment.AssignTask(_Semon, _Marat, "Принести кофе");
-            TaskAssignment.AssignTask(_Marat, _Dina, "Поставить максимальный балл по дз.");
+            TaskAssignment.AssignTask(_Semon, _Vitya, "Принести кофе");
 
             Console.ReadLine();
         }
